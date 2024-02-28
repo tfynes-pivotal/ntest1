@@ -1,0 +1,22 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: ntest1
+  labels:
+    apps.tanzu.vmware.com/workload-type: web
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+    app.kubernetes.io/part-of: ntest1
+spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/min-scale: "1"
+  build:
+    env:
+    - name: BP_JVM_VERSION
+      value: "21"
+  source:
+    git:
+      url: https://github.com/tfynes-pivotal/ntest1
+      ref:
+        branch: main
