@@ -7,9 +7,6 @@ metadata:
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     app.kubernetes.io/part-of: ntest1
 spec:
-  env:
-    - name: message
-      value: ntest1-native
   build:
     env:
     - name: BP_JVM_VERSION
@@ -33,6 +30,8 @@ spec:
     - name: SERVER_PORT
       value: "8080"
   env:
+  - name: message
+    value: ntest1-native
   - name: MANAGEMENT_HEALTH_PROBES_ENABLED
     value: "true"
   - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ADD_ADDITIONAL_PATHS
