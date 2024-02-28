@@ -7,6 +7,9 @@ metadata:
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     app.kubernetes.io/part-of: ntest1
 spec:
+  env:
+    - name: message
+      value: ntest1
   params:
   - name: annotations
     value:
