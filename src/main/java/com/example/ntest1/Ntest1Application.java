@@ -18,7 +18,7 @@ public class Ntest1Application {
 		String message = System.getenv("message");
 		if (message == null) message = "";
 		String response = message;
-		System.out.println("message");
+		System.out.println("message: " + message);
 		return response + "\n";
 	}
 
